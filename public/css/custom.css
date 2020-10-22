@@ -1,0 +1,25 @@
+/* 
+
+1. Add your custom Css styles below
+2. Place the this code in your template: 
+
+ <link href="css/custom.css" rel="stylesheet">
+
+*/
+
+.product .product-price {
+    width: 50%;
+}
+
+/* #page-title{
+    background-image: url(../images/pattern-icons/6.jpg);
+    opacity: 0.25;
+} */
+
+/* #page-title .page-title > h1{
+    color: white;
+}
+
+#page-title .page-title > span{
+    color: white;
+} */
