@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\Admin\AdminPagesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,4 +36,8 @@ Route::get("/sortProducts", [ProductsController::class, 'sortProducts']);
 Route::get("/about", [PagesController::class, 'about']);
 Route::get("/contact", [PagesController::class, 'contact']);
 Route::post("/sendMessage", [PagesController::class, 'sendMessage']);
+
+
+//ADMIN ROUTES
+Route::get("/admin/dashboard", [AdminPagesController::class, 'dashboard']);
 
