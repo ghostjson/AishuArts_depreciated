@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Order;
+use App\Models\Payment;
+use App\Models\CartItem;
 use App\Cart;
 use Session;
 
@@ -17,41 +19,42 @@ class OrdersController extends Controller
     }
 
     public function createOrder(Request $request){
-        // $validatedData = $request->validate([
-        //     'name' => 'required',
-        //     'address' => 'required|max:255',
-        //     'district' => 'required',
-        //     'state' => 'required',
-        //     'country' => 'required',
-        //     'pincode' => 'required',
-        //     'email' => 'required|email',
-        //     'phone' => 'required|max:10',
-        // ], [
-        //     'name.required' => 'Name is required',
-        //     'district.required' => 'district is required',
-        //     'state.required' => 'state is required',
-        //     'country.required' => 'country is required',
-        //     'pincode.required' => 'pincode is required',
-        //     'email.required' => 'email is required',
-        //     'phone.required' => 'phone is required'
-        // ]);
-        // $order = new Order();
-        // $order->payment_id = $request->input('payment_id');
-        // $order->payment_id = $request->input('total');
-        // $order->name = $request->input('name');
-        // $order->address = $request->input('address');
-        // $order->district = $request->input('district');
-        // $order->state = $request->input('state');
-        // $order->country = $request->input('country');
-        // $order->pincode = $request->input('pincode');
-        // $order->email = $request->input('email');
-        // $order->phone = $request->input('phone');
-        // $order->payment_id = $request->input('shipped');
-        // $order->payment_id = $request->input('accepted');
-        // $order->create();
-        
+        //get all order params from request
         $input = $request->all();
         $order = Order::create($input);
+        //get all cart params from session
+        $cart = $request->session()->get('cart');
+        //list all products and quanitities
+        $cart = new Cart($cart);
+        $items = $cart->getProductItemsList();
+        $cartItems = [];
+        foreach ($items as $item) {
+            $cartItem = new CartItem();
+            $cartItem->quantity = $item['quantity'];
+            $cartItem->price = $item['price'];
+            $cartItem->product_id = $item['data']['id'];
+            $product = Product::find($cartItem->product_id);
+            $cartItem->product_name = $product->name;
+            $cartItem->product_image = $product->image;
+            array_push($cartItems, $cartItem);
+        }
+        //calculate total amount
+        $total_amount= $cart->totalPrice;
+        //create payment
+        $payment = new Payment();
+        $payment->amount =  $total_amount;
+        $payment->order_id = $order->id;
+        $payment->paid = true;
+        $payment->save();
+        //create order
+        $order->payment_id = $payment->id;
+        $order->total = $total_amount;
+        $order->save();
+        //create order_product
+        foreach ($cartItems as $cart_item) {
+            $cart_item->order_id = $order->id;
+            $cart_item->save();
+        }
         $request->session()->put('order', $order);
         return redirect()->route('payment', ['order_id' => $order->id]);
     }

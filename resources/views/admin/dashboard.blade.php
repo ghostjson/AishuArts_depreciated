@@ -11,7 +11,7 @@
                         <h5 class="text-white op-7 mb-2"></h5>
                     </div>
                     <div class="ml-md-auto py-2 py-md-0">
-                        <a href="#" class="btn btn-white btn-border btn-round mr-2">Orders Management</a>
+                        <a href="/admin/orders" class="btn btn-white btn-border btn-round mr-2">New Orders</a>
                         <a href="#" class="btn btn-secondary btn-round">Add Product</a>
                     </div>
                 </div>
@@ -33,10 +33,6 @@
                                     <div id="circles-2"></div>
                                     <h6 class="fw-bold mt-3 mb-0">Orders in Progress</h6>
                                 </div>
-                                <div class="px-2 pb-2 pb-md-0 text-center">
-                                    <div id="circles-3"></div>
-                                    <h6 class="fw-bold mt-3 mb-0">Shipped Orders</h6>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -49,18 +45,18 @@
                                 <div class="col-md-4 d-flex flex-column justify-content-around">
                                     <div>
                                         <h6 class="fw-bold text-uppercase text-success op-8">Total Revenue</h6>
-                                        <h3 class="fw-bold">₹9,782</h3>
+                                    <h3 class="fw-bold">₹ {{$total_payment_this_week}}</h3>
                                     </div>
                                     {{-- <div>
                                         <h6 class="fw-bold text-uppercase text-danger op-8">Total Spend</h6>
                                         <h3 class="fw-bold">₹1,248</h3>
                                     </div> --}}
                                 </div>
-                                <div class="col-md-8">
+                                {{-- <div class="col-md-8">
                                     <div id="chart-container">
                                         <canvas id="totalIncomeChart"></canvas>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -528,7 +524,7 @@
         value:100,
         maxValue:100,
         width:7,
-        text: 5,
+        text: "{{$new_orders_count}}",
         colors:['#f1f1f1', '#007bff'],
         duration:400,
         wrpClass:'circles-wrp',
@@ -543,7 +539,7 @@
         value:100,
         maxValue:100,
         width:7,
-        text: 36,
+        text: "{{$completed_orders_count}}",
         colors:['#f1f1f1', '#007bff'],
         duration:400,
         wrpClass:'circles-wrp',
@@ -577,7 +573,7 @@
                 label: "Total Income",
                 backgroundColor: '#ff9e27',
                 borderColor: 'rgb(23, 125, 255)',
-                data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
+                data: [655, 444, 900, 567, 434, 6556, 4223, 3000, 86, 400],
             }],
         },
         options: {
