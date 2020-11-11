@@ -5,18 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Auth;
-use Redirect;
 use App\Models\Order;
 use App\Models\Payment;
+
+
 class AdminPagesController extends Controller
 {
     public function dashboard(){
         $new_orders_count = count(Order::where('accepted',false)->orderBy('created_at', 'desc')
-        ->whereRaw('Date(created_at) = CURDATE()')->get());
+            ->get());
         $completed_orders_count = count(Order::where('accepted',true)->orderBy('created_at', 'desc')
-        ->whereRaw('Date(created_at) = CURDATE()')->get());
-        $total_payment_this_week = Payment::where('paid',true)->whereRaw('Date(created_at) = CURDATE()')->sum('amount');
+            ->get());
+        $total_payment_this_week = Payment::where('paid',true)->sum('amount');
         return view("admin/dashboard", compact('new_orders_count', 'completed_orders_count', 'total_payment_this_week'));
     }
 
@@ -40,7 +40,7 @@ class AdminPagesController extends Controller
                 return Redirect::to('admin/login')
                     ->withErrors($validator) // send back all errors to the login form
                     ->withInput($request->except('password')); // send back the input (not the password) so that we can repopulate the form
-            } else {   
+            } else {
                 if (Auth::attempt($userdata)) {
 
                     // validation successful!
@@ -49,9 +49,9 @@ class AdminPagesController extends Controller
                     // for now we'll just echo success (even though echoing in a controller is bad)
                     return redirect('admin/dashboard');
 
-                } else {        
+                } else {
 
-                    // validation not successful, send back to form 
+                    // validation not successful, send back to form
                     return redirect('admin/login')->withErrors(['Invalid Username or Password. Please enter valid credentials.']);
 
                 }

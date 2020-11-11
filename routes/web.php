@@ -41,6 +41,10 @@ Route::post("/sendMessage", [PagesController::class, 'sendMessage']);
 
 
 //ADMIN ROUTES
+Route::get("/admin", function (){
+    return redirect('/admin/dashboard');
+});
+
 Route::get("/admin/dashboard", [AdminPagesController::class, 'dashboard'])->middleware('auth');
 
 Route::get("/admin/orders", [AdminOrdersController::class, 'orders'])->middleware('auth');

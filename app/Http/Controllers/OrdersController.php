@@ -14,11 +14,13 @@ use Session;
 
 class OrdersController extends Controller
 {
-    public function checkout(){
+    public function checkout()
+    {
         return view("checkout");
     }
 
-    public function createOrder(Request $request){
+    public function createOrder(Request $request)
+    {
         //get all order params from request
         $input = $request->all();
         $order = Order::create($input);
@@ -39,10 +41,10 @@ class OrdersController extends Controller
             array_push($cartItems, $cartItem);
         }
         //calculate total amount
-        $total_amount= $cart->totalPrice;
+        $total_amount = $cart->totalPrice;
         //create payment
         $payment = new Payment();
-        $payment->amount =  $total_amount;
+        $payment->amount = $total_amount;
         $payment->order_id = $order->id;
         $payment->paid = true;
         $payment->save();
@@ -59,7 +61,8 @@ class OrdersController extends Controller
         return redirect()->route('payment', ['order_id' => $order->id]);
     }
 
-    public function complete(Request $request, $order_id){
+    public function complete(Request $request, $order_id)
+    {
         $order = Order::find($order_id);
         $request->session()->flush();
         return view("complete", compact("order"));

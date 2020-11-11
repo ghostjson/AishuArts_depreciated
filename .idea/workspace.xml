@@ -12,10 +12,12 @@
   <component name="ChangeListManager">
     <list default="true" id="9253444f-60a1-463f-adea-a1ba31d554c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_17_203814_create_payments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_17_203814_create_payments_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_31_171535_add_fields_to_payments_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_31_181001_create_cart_items_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_31_181001_create_cart_items_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_01_190953_add_fields_to_cart_items_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminPagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminPagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/ecommerce.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/ecommerce.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +175,14 @@
       <workItem from="1603347967052" duration="40000" />
       <workItem from="1603348023074" duration="29000" />
     </task>
+    <task id="LOCAL-00001" summary="fix migration error with sqlite">
+      <created>1605087879589</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605087879589</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,5 +199,19 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix migration error with sqlite" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix migration error with sqlite" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2070" y="0" key="CommitChangelistDialog2" timestamp="1605087878521">
+      <screen x="1920" y="0" width="1360" height="728" />
+    </state>
+    <state x="2070" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1605087878521" />
+    <state x="2179" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1605089558781">
+      <screen x="1920" y="0" width="1360" height="728" />
+    </state>
+    <state x="2179" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1605089558781" />
   </component>
 </project>
