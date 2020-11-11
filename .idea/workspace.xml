@@ -10,7 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9253444f-60a1-463f-adea-a1ba31d554c0" name="Default Changelist" comment="" />
+    <list default="true" id="9253444f-60a1-463f-adea-a1ba31d554c0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_17_203814_create_payments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_17_203814_create_payments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_31_171535_add_fields_to_payments_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_31_181001_create_cart_items_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_31_181001_create_cart_items_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_01_190953_add_fields_to_cart_items_table.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

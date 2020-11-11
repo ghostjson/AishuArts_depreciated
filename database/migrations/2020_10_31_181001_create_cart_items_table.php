@@ -20,6 +20,8 @@ class CreateCartItemsTable extends Migration
             $table->integer('quantity');
             $table->decimal('price');
             $table->integer('order_id');
+            $table->string('product_name');
+            $table->string('product_image');
         });
     }
 
