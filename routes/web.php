@@ -6,6 +6,8 @@ use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Admin\AdminPagesController;
+use App\Http\Controllers\Admin\AdminOrdersController;
+use App\Http\Controllers\Admin\AdminProductsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,5 +41,29 @@ Route::post("/sendMessage", [PagesController::class, 'sendMessage']);
 
 
 //ADMIN ROUTES
-Route::get("/admin/dashboard", [AdminPagesController::class, 'dashboard']);
+Route::get("/admin", function (){
+    return redirect('/admin/dashboard');
+});
+
+Route::get("/admin/dashboard", [AdminPagesController::class, 'dashboard'])->middleware('auth');
+
+Route::get("/admin/orders", [AdminOrdersController::class, 'orders'])->middleware('auth');
+Route::get("/admin/completedOrders", [AdminOrdersController::class, 'completedOrders'])->middleware('auth');
+Route::get("/admin/order/{id}", [AdminOrdersController::class, 'show'])->middleware('auth');
+Route::get("/admin/acceptOrder/{id}", [AdminOrdersController::class, 'acceptOrder'])->middleware('auth');
+
+Route::get("/admin/products", [AdminProductsController::class, 'products'])->middleware('auth');
+Route::get("/admin/product/new", [AdminProductsController::class, 'new'])->middleware('auth');
+Route::get("/admin/product/{id}/edit", [AdminProductsController::class, 'edit'])->middleware('auth');
+Route::post("/admin/product/create", [AdminProductsController::class, 'create'])->middleware('auth');
+Route::post("/admin/product/update", [AdminProductsController::class, 'update'])->middleware('auth');
+
+
+// route to show the login form
+Route::get("/admin/login", [AdminPagesController::class, 'showLogin']);
+// Route::get('/admin/login', 'AdminPagesController@showLogin')->name('showLogin');
+// route to process the form
+Route::post("/admin/doLogin", [AdminPagesController::class, 'doLogin']);
+// route to logout
+Route::get("/admin/doLogout", [AdminPagesController::class, 'doLogout'])->middleware('auth');
 

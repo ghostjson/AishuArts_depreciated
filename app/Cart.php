@@ -60,4 +60,8 @@ class Cart
         $this->totalQuantity = $quantity;
         $this->totalPrice =$total;
     }
+
+    public function getProductItemsList(){
+        return $this->items;
+    }
 }

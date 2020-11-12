@@ -4,8 +4,9 @@
             <!--Logo-->
             <div id="logo">
                 <a href="/">
-                    <span class="logo-default">🎨aishuArts</span>
-                    <span class="logo-dark">🎨aishuArts</span>
+                    <span class="logo-default">
+                        <img width="100" src="{{asset('images/logo/logo.jpeg')}}">
+                    </span>
                 </a>
             </div>
             <!--End: Logo-->

@@ -22,4 +22,12 @@ class Order extends Model
         'shipped',
         'accepted'
     ];
+
+    public function products() {
+        return $this->belongsToMany(Product::Class);
+    }
+
+    public function payment() {
+        return $this->hasOne(Payment::Class);
+    }
 }

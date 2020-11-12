@@ -74,55 +74,15 @@
 							<div class="collapse" id="base">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="components/avatars.html">
+										<a href="/admin/orders">
 											<span class="sub-item">New Orders List</span>
 										</a>
 									</li>
 									<li>
-										<a href="components/buttons.html">
-											<span class="sub-item">Ongoing Orders List</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/gridsystem.html">
+										<a href="/admin/completedOrders">
 											<span class="sub-item">Completed Orders List</span>
 										</a>
 									</li>
-									<li>
-										<a href="components/panels.html">
-											<span class="sub-item">Cancelled Orders List</span>
-										</a>
-									</li>
-									{{-- <li>
-										<a href="components/notifications.html">
-											<span class="sub-item">Notifications</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/sweetalert.html">
-											<span class="sub-item">Sweet Alert</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/font-awesome-icons.html">
-											<span class="sub-item">Font Awesome Icons</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/simple-line-icons.html">
-											<span class="sub-item">Simple Line Icons</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/flaticons.html">
-											<span class="sub-item">Flaticons</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/typography.html">
-											<span class="sub-item">Typography</span>
-										</a>
-									</li> --}}
 								</ul>
 							</div>
 						</li>
@@ -135,12 +95,12 @@
 							<div class="collapse" id="sidebarLayouts">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="sidebar-style-1.html">
+										<a href="/admin/products">
 											<span class="sub-item">Products List</span>
 										</a>
 									</li>
 									<li>
-										<a href="overlay-sidebar.html">
+										<a href="/admin/product/new">
 											<span class="sub-item">Add New Product</span>
 										</a>
 									</li>

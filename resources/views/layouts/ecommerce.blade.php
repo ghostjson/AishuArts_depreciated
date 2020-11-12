@@ -3,11 +3,11 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />    
-    <meta name="author" content="INSPIRO" />    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="INSPIRO" />
     <meta name="description" content="Themeforest Template Polo, html template">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/png" href="{{asset('images/favicon-new.jpg')}}">   
+    <link rel="icon" type="image/png" href="{{asset('images/favicon-new.jpg')}}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Document title -->
     <title>🎨aishuArts🖌</title>
@@ -31,7 +31,7 @@
         {{-- PAGE CONTENTS START --}}
         @yield('contents')
         {{-- PAGE CONTENTS END --}}
-        
+
         <!-- DELIVERY INFO -->
         @include('partials.deliveryinfo')
         <!-- end: DELIVERY INFO -->

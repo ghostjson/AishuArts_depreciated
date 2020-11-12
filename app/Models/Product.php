@@ -20,4 +20,8 @@ class Product extends Model
         $formatted = "₹".$value;
         return $formatted;
     }
+
+    public function orders() {
+        return $this->belongsToMany(Order::Class);
+    }
 }

@@ -1,7 +1,7 @@
 <!-- Logo Header -->
 <div class="logo-header" data-background-color="blue">
 				
-    <a href="index.html" class="logo">
+    <a href="/admin/dashboard" class="logo">
         <span class="navbar-brand" style="color:white; font-weight:bolder">AishuArts Admin</span>
         {{-- <img src="/admin/img/logo.svg" alt="navbar brand" class="navbar-brand"> --}}
     </a>
