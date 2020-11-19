@@ -41,9 +41,7 @@ Route::post("/sendMessage", [PagesController::class, 'sendMessage']);
 
 
 //ADMIN ROUTES
-Route::get("/admin", function (){
-    return redirect('/admin/dashboard');
-});
+
 
 Route::get("/admin/dashboard", [AdminPagesController::class, 'dashboard'])->middleware('auth');
 
@@ -51,8 +49,8 @@ Route::get("/admin/orders", [AdminOrdersController::class, 'orders'])->middlewar
 Route::get("/admin/completedOrders", [AdminOrdersController::class, 'completedOrders'])->middleware('auth');
 Route::get("/admin/order/{id}", [AdminOrdersController::class, 'show'])->middleware('auth');
 Route::get("/admin/acceptOrder/{id}", [AdminOrdersController::class, 'acceptOrder'])->middleware('auth');
-
-Route::get("/admin/products", [AdminProductsController::class, 'products'])->middleware('auth');
+Route::get('/admin/products', 'App\Http\Controllers\Admin\AdminProductsController@products')->name('products');
+//Route::get("/admin/products", [AdminProductsController::class, 'products'])->middleware('auth');
 Route::get("/admin/product/new", [AdminProductsController::class, 'new'])->middleware('auth');
 Route::get("/admin/product/{id}/edit", [AdminProductsController::class, 'edit'])->middleware('auth');
 Route::post("/admin/product/create", [AdminProductsController::class, 'create'])->middleware('auth');

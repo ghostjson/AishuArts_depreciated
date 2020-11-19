@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Order;
 use App\Models\Payment;
-
+use Auth;
 
 class AdminPagesController extends Controller
 {
